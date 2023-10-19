@@ -1,0 +1,12 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pizzanicola_srv
+    username: pizzeriauser
+    password: P1zz4N1col@
+
+  jpa:
+    show-sql: true
