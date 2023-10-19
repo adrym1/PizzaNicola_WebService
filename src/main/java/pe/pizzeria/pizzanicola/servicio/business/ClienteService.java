@@ -6,7 +6,6 @@ import pe.pizzeria.pizzanicola.servicio.modelo.Cliente;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public interface ClienteService {
     public List<Cliente> listaClientes();
     public Optional<Cliente> listaClientePorId(Integer id);
