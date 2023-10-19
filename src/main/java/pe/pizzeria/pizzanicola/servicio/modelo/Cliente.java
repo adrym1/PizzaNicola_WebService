@@ -1,4 +1,4 @@
-package pe.pizzeria.pizzanicola.modelo;
+package pe.pizzeria.pizzanicola.servicio.modelo;
 
 import javax.persistence.*;
 
