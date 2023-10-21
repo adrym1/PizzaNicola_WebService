@@ -2,40 +2,35 @@ package pe.pizzeria.pizzanicola.servicio.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.pizzeria.pizzanicola.servicio.business.ClienteService;
-import pe.pizzeria.pizzanicola.servicio.modelo.Cliente;
+import pe.pizzeria.pizzanicola.servicio.model.Cliente;
+import pe.pizzeria.pizzanicola.servicio.repository.ClienteRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/pizzeria")
+@RequestMapping("api/pizzeria/clientes")
 public class ClienteController {
     @Autowired
-    private ClienteService service;
+    private ClienteRepository repository;
 
-    @GetMapping("/clientes")
-    public List<Cliente> listaClientes() {
-        return service.listaClientes();
+    @GetMapping("/")
+    public List<Cliente> listar() {
+        return repository.findAll();
     }
 
-    @GetMapping("/clientes/{id}")
-    public Optional<Cliente> listaClientePorId(@PathVariable Integer id) {
-        return service.listaClientePorId(id);
+    @PostMapping("/cliente")
+    public Cliente registrar(@RequestBody Cliente cliente) {
+        return repository.insert(cliente);
     }
 
-    @PostMapping("/clientes")
-    public void guardarCliente(@RequestBody Cliente cliente) {
-        service.guardar(cliente);
+    @PutMapping("/cliente/{id}")
+    public Cliente actualizar(@PathVariable String id, @RequestBody Cliente cliente) {
+        return repository.save(cliente);
     }
 
-    @PutMapping("/clientes/{id}")
-    public void actualizarCliente(@PathVariable Integer id, @RequestBody Cliente cliente) {
-        service.actualizar(id, cliente);
-    }
-
-    @DeleteMapping("/clientes/{id}")
-    public void eliminarCliente(@PathVariable Integer id) {
-        service.eliminar(id);
+    @DeleteMapping("/cliente/{id}")
+    public void eliminarCliente(@PathVariable String id) {
+        repository.deleteById(id);
     }
 }
