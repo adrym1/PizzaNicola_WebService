@@ -32,12 +32,9 @@ public class PizzaSImple implements PizzaService{
 		Pizza obj = pizzaRepository.findById(id).get();
 		if(obj != null) {
 			obj.setNombrePizza(pizza.getNombrePizza());
-			obj.setIngredientes(pizza.getIngredientes());
-			obj.setIdTamanio(pizza.getIdTamanio());
-			//obj.setTamanio(pizza.getTamanio());
-			obj.setIdTipoMasa(pizza.getIdTipoMasa());
-			//obj.setTipoMasa(pizza.getTipoMasa());
-			obj.setIdExtra(pizza.getIdExtra());
+			obj.setIngredientes(pizza.getIngredientes());			
+			obj.setTamanio(pizza.getTamanio());			
+			obj.setTipoMasa(pizza.getTipoMasa());			
 			obj.setPrecio(pizza.getPrecio());
 			obj.setStock(pizza.getStock());
 			pizzaRepository.save(obj);

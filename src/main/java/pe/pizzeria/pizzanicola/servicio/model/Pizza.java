@@ -8,15 +8,11 @@ public class Pizza {
 	private String id;
 	private String nombrePizza;
 	private String ingredientes;
-	private String idTamanio;
 	private String tamanio;
-	private String idTipoMasa;
 	private String tipoMasa;
-	private String idExtra;
-	private String extra;
 	private double precio;
 	private int stock;
-	
+
 	
 	public String getId() {
 		return id;
@@ -48,16 +44,6 @@ public class Pizza {
 	}
 
 
-	public String getIdTamanio() {
-		return idTamanio;
-	}
-
-
-	public void setIdTamanio(String idTamanio) {
-		this.idTamanio = idTamanio;
-	}
-
-
 	public String getTamanio() {
 		return tamanio;
 	}
@@ -68,16 +54,6 @@ public class Pizza {
 	}
 
 
-	public String getIdTipoMasa() {
-		return idTipoMasa;
-	}
-
-
-	public void setIdTipoMasa(String idTipoMasa) {
-		this.idTipoMasa = idTipoMasa;
-	}
-
-
 	public String getTipoMasa() {
 		return tipoMasa;
 	}
@@ -85,26 +61,6 @@ public class Pizza {
 
 	public void setTipoMasa(String tipoMasa) {
 		this.tipoMasa = tipoMasa;
-	}
-
-
-	public String getIdExtra() {
-		return idExtra;
-	}
-
-
-	public void setIdExtra(String idExtra) {
-		this.idExtra = idExtra;
-	}
-
-
-	public String getExtra() {
-		return extra;
-	}
-
-
-	public void setExtra(String extra) {
-		this.extra = extra;
 	}
 
 
