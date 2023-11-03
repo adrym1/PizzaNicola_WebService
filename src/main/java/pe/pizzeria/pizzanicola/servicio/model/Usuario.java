@@ -7,49 +7,35 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "usuario")
 public class Usuario {
 
-	private String idUsuario;
-	private String nombres;
-	private Date fechaNacimiento;
+	private String id;
+	private String nombre;
+	private String apellidos;
 	private String dni;
-	private String idRegion;
-	private String nombreRegion;
 	private String login;
 	private String password;
-	public String getIdUsuario() {
-		return idUsuario;
+	public String getId() {
+		return id;
 	}
-	public void setIdUsuario(String idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getNombres() {
-		return nombres;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public String getApellidos() {
+		return apellidos;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 	public String getDni() {
 		return dni;
 	}
 	public void setDni(String dni) {
 		this.dni = dni;
-	}
-	public String getIdRegion() {
-		return idRegion;
-	}
-	public void setIdRegion(String idRegion) {
-		this.idRegion = idRegion;
-	}
-	public String getNombreRegion() {
-		return nombreRegion;
-	}
-	public void setNombreRegion(String nombreRegion) {
-		this.nombreRegion = nombreRegion;
 	}
 	public String getLogin() {
 		return login;
@@ -66,6 +52,8 @@ public class Usuario {
 	public Usuario() {
 		super();
 	}
+	
+	
 	
 	
 }

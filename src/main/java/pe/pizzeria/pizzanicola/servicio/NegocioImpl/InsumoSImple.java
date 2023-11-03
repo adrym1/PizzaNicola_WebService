@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.pizzeria.pizzanicola.servicio.Negocio.InsumoService;
-import pe.pizzeria.pizzanicola.servicio.model.Insumos;
+import pe.pizzeria.pizzanicola.servicio.model.Insumo;
 import pe.pizzeria.pizzanicola.servicio.repository.InsumosRepository;
 
 @Service
@@ -15,19 +15,19 @@ public class InsumoSImple implements InsumoService{
 	@Autowired
 	InsumosRepository repository;
 	@Override
-	public List<Insumos> lstInsumos() {
+	public List<Insumo> lstInsumos() {
 		return repository.findAll();
 	}
 
 	@Override
-	public void guardar(Insumos insumos) {
+	public void guardar(Insumo insumos) {
 		repository.save(insumos);
 		
 	}
 
 	@Override
-	public void actualizar(String id, Insumos insumos) {
-		Insumos obj = repository.findById(id).get();
+	public void actualizar(String id, Insumo insumos) {
+		Insumo obj = repository.findById(id).get();
 		if(obj != null) {
 			obj.setNombreInsumo(insumos.getNombreInsumo());
 			obj.setDescripcion(insumos.getDescripcion());
@@ -39,7 +39,7 @@ public class InsumoSImple implements InsumoService{
 
 	@Override
 	public void eliminar(String id) {	
-		Optional<Insumos> obj = repository.findById(id);
+		Optional<Insumo> obj = repository.findById(id);
 	
 		if(obj.isPresent()) {
 		repository.delete(obj.get());

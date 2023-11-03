@@ -3,23 +3,29 @@ package pe.pizzeria.pizzanicola.servicio.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "insumo")
-public class Insumos {
+public class Insumo {
 
-    private String idInsumo;
+    private String id;
     private String nombreInsumo;
     private String descripcion;
     private double precio;
     private int stock;
     
     
-	public String getIdInsumo() {
-		return idInsumo;
+	
+
+	public String getId() {
+		return id;
 	}
 
 
-	public void setIdInsumo(String idInsumo) {
-		this.idInsumo = idInsumo;
+
+
+	public void setId(String id) {
+		this.id = id;
 	}
+
+
 
 
 	public String getNombreInsumo() {
@@ -27,9 +33,13 @@ public class Insumos {
 	}
 
 
+
+
 	public void setNombreInsumo(String nombreInsumo) {
 		this.nombreInsumo = nombreInsumo;
 	}
+
+
 
 
 	public String getDescripcion() {
@@ -37,9 +47,13 @@ public class Insumos {
 	}
 
 
+
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
+
 
 
 	public double getPrecio() {
@@ -47,9 +61,13 @@ public class Insumos {
 	}
 
 
+
+
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
+
 
 
 	public int getStock() {
@@ -57,12 +75,16 @@ public class Insumos {
 	}
 
 
+
+
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
 
 
-	public Insumos() {
+
+
+	public Insumo() {
 		super();
 	}
     

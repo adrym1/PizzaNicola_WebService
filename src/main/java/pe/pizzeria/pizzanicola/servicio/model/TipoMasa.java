@@ -5,14 +5,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "tipoMasa")
 public class TipoMasa {
 
-	private String idTipoMasa;
+	private String id;
 	private String descripcion;
-	
-	public String getIdTipoMasa() {
-		return idTipoMasa;
+	public String getId() {
+		return id;
 	}
-	public void setIdTipoMasa(String idTipoMasa) {
-		this.idTipoMasa = idTipoMasa;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getDescripcion() {
 		return descripcion;

@@ -34,9 +34,9 @@ public class PizzaSImple implements PizzaService{
 			obj.setNombrePizza(pizza.getNombrePizza());
 			obj.setIngredientes(pizza.getIngredientes());
 			obj.setIdTamanio(pizza.getIdTamanio());
-			obj.setTamanio(pizza.getTamanio());
+			//obj.setTamanio(pizza.getTamanio());
 			obj.setIdTipoMasa(pizza.getIdTipoMasa());
-			obj.setTipoMasa(pizza.getTipoMasa());
+			//obj.setTipoMasa(pizza.getTipoMasa());
 			obj.setIdExtra(pizza.getIdExtra());
 			obj.setPrecio(pizza.getPrecio());
 			obj.setStock(pizza.getStock());

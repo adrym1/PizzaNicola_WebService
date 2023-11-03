@@ -31,11 +31,9 @@ public class UsuarioSImple implements UsuarioService{
 	public void actualizar(String id, Usuario usuario) {
 		Usuario obj = repository.findById(id).get();
 		if(obj != null) {
-			obj.setNombres(usuario.getNombres());
-			obj.setFechaNacimiento(usuario.getFechaNacimiento());
+			obj.setNombre(usuario.getNombre());
+			obj.setApellidos(usuario.getApellidos());;
 			obj.setDni(usuario.getDni());
-			obj.setIdRegion(usuario.getIdRegion());
-			obj.setNombreRegion(usuario.getNombreRegion());
 			repository.save(obj);
 		}
 		
