@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.pizzeria.pizzanicola.servicio.Negocio.ExtraService;
 import pe.pizzeria.pizzanicola.servicio.model.Extra;
+import pe.pizzeria.pizzanicola.servicio.repository.ExtraRepository;
 
 
 @RestController
@@ -24,25 +24,25 @@ import pe.pizzeria.pizzanicola.servicio.model.Extra;
 public class ExtraController {
 
 	@Autowired
-	private ExtraService services;
+	private ExtraRepository repository;
 	
 	@GetMapping("/")
 	public List<Extra> listar(){
-		return services.lstExtra();
+		return repository.findAll();
 	}
 	
 	@PostMapping("/extra")
-	public void registrar(@Validated @RequestBody Extra extra) {
-		 services.guardar(extra);
+	public Extra registrar(@Validated @RequestBody Extra extra) {
+		 return repository.insert(extra);
 	}
 	
 	@PutMapping("/extra/{id}")
-	public void actualizar(@PathVariable String id, @Validated @RequestBody Extra extra) {
-		services.actualizar(id, extra);
+	public Extra actualizar(@PathVariable String id, @Validated @RequestBody Extra extra) {
+		return repository.save(extra);
 	}
 	
 	@DeleteMapping("/extra/{id}")
 	public void eliminar (@PathVariable String id) {
-		services.eliminar(id);
-		}
+		repository.deleteById(id);
+	}
 }

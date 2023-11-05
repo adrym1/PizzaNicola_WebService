@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.pizzeria.pizzanicola.servicio.Negocio.UsuarioService;
 import pe.pizzeria.pizzanicola.servicio.model.Usuario;
+import pe.pizzeria.pizzanicola.servicio.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("api/nicola/usuarios")
@@ -23,25 +23,25 @@ import pe.pizzeria.pizzanicola.servicio.model.Usuario;
 public class UsuarioController {
 
 	@Autowired
-	private UsuarioService services;
+	private UsuarioRepository repository;
 	
 	@GetMapping("/")
 	public List<Usuario> listar(){
-		return services.lstUsuario();
+		return repository.findAll();
 	}
 	
 	@PostMapping("/usuario")
-	public void registrar(@Validated @RequestBody Usuario usuario) {
-		 services.guardar(usuario);
+	public Usuario registrar(@Validated @RequestBody Usuario usuario) {
+		 return repository.insert(usuario);
 	}
 	
 	@PutMapping("/usuario/{id}")
-	public void actualizar(@PathVariable String id, @Validated @RequestBody Usuario usuario) {
-		services.actualizar(id, usuario);
+	public Usuario actualizar(@PathVariable String id, @Validated @RequestBody Usuario usuario) {
+		return repository.save(usuario);
 	}
 	
 	@DeleteMapping("/usuario/{id}")
 	public void eliminar (@PathVariable String id) {
-		services.eliminar(id);
-		}
+		repository.deleteById(id);
+	}
 }

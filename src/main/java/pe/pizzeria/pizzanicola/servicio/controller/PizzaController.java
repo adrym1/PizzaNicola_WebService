@@ -14,35 +14,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.pizzeria.pizzanicola.servicio.Negocio.PizzaService;
 import pe.pizzeria.pizzanicola.servicio.model.Pizza;
+import pe.pizzeria.pizzanicola.servicio.repository.PizzaRepository;
 
 @RestController
 @RequestMapping("api/nicola/pizzas")
 @Controller
 public class PizzaController {
-
-
 	@Autowired
-	private PizzaService services;
+	//private PizzaService services;
+	private PizzaRepository repository;
 	
 	@GetMapping("/")
 	public List<Pizza> listar(){
-		return services.lstPizza();
+		return repository.findAll();
 	}
 	
 	@PostMapping("/pizza")
-	public void registrar(@Validated @RequestBody Pizza pizza) {
-		 services.guardar(pizza);
+	public Pizza registrar(@Validated @RequestBody Pizza pizza) {
+		 return repository.insert(pizza);
 	}
 	
 	@PutMapping("/pizza/{id}")
-	public void actualizar(@PathVariable String id, @Validated @RequestBody Pizza pizza) {
-		services.actualizar(id, pizza);
+	public Pizza actualizar(@PathVariable String id, @Validated @RequestBody Pizza pizza) {
+		return repository.save(pizza);
 	}
 	
 	@DeleteMapping("/pizza/{id}")
 	public void eliminar (@PathVariable String id) {
-		services.eliminar(id);
-		}
+		repository.deleteById(id);
+	}
 }
