@@ -17,10 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.pizzeria.pizzanicola.servicio.model.Extra;
 import pe.pizzeria.pizzanicola.servicio.repository.ExtraRepository;
 
-
 @RestController
 @RequestMapping("api/nicola/extras")
-@Controller
 public class ExtraController {
 
 	@Autowired

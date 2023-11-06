@@ -19,7 +19,6 @@ import pe.pizzeria.pizzanicola.servicio.repository.PizzaRepository;
 
 @RestController
 @RequestMapping("api/nicola/pizzas")
-@Controller
 public class PizzaController {
 	@Autowired
 	//private PizzaService services;

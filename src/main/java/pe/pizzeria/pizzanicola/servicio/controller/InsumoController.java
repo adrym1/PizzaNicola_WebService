@@ -19,7 +19,6 @@ import pe.pizzeria.pizzanicola.servicio.repository.InsumoRepository;
 
 @RestController
 @RequestMapping("api/nicola/insumos")
-@Controller
 public class InsumoController {
 	@Autowired
 	private InsumoRepository repository;

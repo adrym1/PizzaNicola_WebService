@@ -3,7 +3,6 @@ package pe.pizzeria.pizzanicola.servicio.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +18,6 @@ import pe.pizzeria.pizzanicola.servicio.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("api/nicola/usuarios")
-@Controller
 public class UsuarioController {
 
 	@Autowired
