@@ -29,6 +29,11 @@ public class ExtraController {
 		return repository.findAll();
 	}
 	
+	@GetMapping("/extra/{descripcion}")
+	public List<Extra> buscar(@PathVariable String descripcion) {
+		return repository.findByDescripcionContainingIgnoreCase(descripcion);
+	}
+	
 	@PostMapping("/extra")
 	public Extra registrar(@Validated @RequestBody Extra extra) {
 		 return repository.insert(extra);

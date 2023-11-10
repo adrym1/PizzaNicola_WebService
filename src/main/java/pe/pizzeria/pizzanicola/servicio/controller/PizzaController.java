@@ -29,6 +29,11 @@ public class PizzaController {
 		return repository.findAll();
 	}
 	
+	@GetMapping("/pizza/{nombrePizza}")
+	public List<Pizza> buscarPorNombre(@PathVariable String nombrePizza) {
+		return repository.findByNombrePizzaContainingIgnoreCase(nombrePizza);
+	}
+	
 	@PostMapping("/pizza")
 	public Pizza registrar(@Validated @RequestBody Pizza pizza) {
 		 return repository.insert(pizza);
