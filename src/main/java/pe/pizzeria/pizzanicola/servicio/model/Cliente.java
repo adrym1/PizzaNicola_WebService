@@ -9,6 +9,7 @@ public class Cliente {
     private String apellidos;
     private Integer edad;
     private String telefono;
+    private String dni;
     private String direccion;
 
     public String getId() {
@@ -49,6 +50,14 @@ public class Cliente {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+    
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getDireccion() {

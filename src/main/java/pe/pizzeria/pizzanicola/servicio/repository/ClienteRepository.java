@@ -6,4 +6,5 @@ import pe.pizzeria.pizzanicola.servicio.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends MongoRepository<Cliente, String> {
+	Cliente findByDni(String dni);
 }

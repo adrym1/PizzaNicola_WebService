@@ -6,7 +6,6 @@ import pe.pizzeria.pizzanicola.servicio.model.Cliente;
 import pe.pizzeria.pizzanicola.servicio.repository.ClienteRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("api/nicola/clientes")
@@ -17,6 +16,11 @@ public class ClienteController {
     @GetMapping("/")
     public List<Cliente> listar() {
         return repository.findAll();
+    }
+    
+    @GetMapping("/cliente/{dni}")
+    public Cliente buscarPorDni(@PathVariable String dni) {
+    	return repository.findByDni(dni);
     }
 
     @PostMapping("/cliente")

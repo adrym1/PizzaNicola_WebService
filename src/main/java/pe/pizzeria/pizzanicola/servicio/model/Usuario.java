@@ -1,7 +1,5 @@
 package pe.pizzeria.pizzanicola.servicio.model;
 
-import java.util.Date;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "usuario")
