@@ -1,6 +1,7 @@
 package pe.pizzeria.pizzanicola.servicio.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -30,6 +31,11 @@ public class InsumoController {
 	@GetMapping("/insumo/{nombreInsumo}")
 	public List<Insumo> buscar(@PathVariable String nombreInsumo) {
 		return repository.findByNombreInsumoContainingIgnoreCase(nombreInsumo);
+	}
+	
+	@GetMapping("/insumo/{id}")
+	public Optional<Insumo> obtenerPorId(@PathVariable String id) {
+		return repository.findById(id);
 	}
 	
 	@PostMapping("/insumo")
