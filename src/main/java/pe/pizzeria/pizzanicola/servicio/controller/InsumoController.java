@@ -33,7 +33,7 @@ public class InsumoController {
 		return repository.findByNombreInsumoContainingIgnoreCase(nombreInsumo);
 	}
 	
-	@GetMapping("/insumo/{id}")
+	@GetMapping("/insumoid/{id}")
 	public Optional<Insumo> obtenerPorId(@PathVariable String id) {
 		return repository.findById(id);
 	}
@@ -48,7 +48,7 @@ public class InsumoController {
 		return repository.save(insumo);
 	}
 	
-	@DeleteMapping("/usuario/{id}")
+	@DeleteMapping("/insumo/{id}")
 	public void eliminar (@PathVariable String id) {
 		repository.deleteById(id);
 	}

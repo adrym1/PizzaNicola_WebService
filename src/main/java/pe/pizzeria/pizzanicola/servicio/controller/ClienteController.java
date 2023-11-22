@@ -24,7 +24,7 @@ public class ClienteController {
     	return repository.findByDni(dni);
     }
     
-    @GetMapping("/cliente/{id}")
+    @GetMapping("/clienteid/{id}")
     public Optional<Cliente> buscarPorId(@PathVariable String id) {
     	return repository.findById(id);
     }
