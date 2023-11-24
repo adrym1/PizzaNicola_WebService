@@ -8,6 +8,7 @@ public class Insumo {
     private String id;
     private String nombreInsumo;
     private String descripcion;
+    private String proveedor;
     private double precio;
     private int stock;
 
@@ -28,6 +29,12 @@ public class Insumo {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public String getProveedor() {
+		return proveedor;
+	}
+	public void setProveedor(String proveedor) {
+		this.proveedor = proveedor;
 	}
 	public double getPrecio() {
 		return precio;
